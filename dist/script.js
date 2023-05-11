@@ -129,6 +129,7 @@ function showSales() {
 
     // Add to total sales
     totalSales += sale.totalAmount;
+    
 
     // Add delete button to cell
     var deleteButton = document.createElement("button");
@@ -158,4 +159,21 @@ function showSales() {
   var emptyCell3 = totalRow.insertCell(4);
   var emptyCell4 = totalRow.insertCell(5);
   var emptyCell5 = totalRow.insertCell(6);
+}
+function showProfit() {
+  var totalGasCost = 0;
+  var totalSellingPrice = 0;
+
+  // Calculate total gas cost and selling price
+  for (var i = 0; i < sales.length; i++) {
+    var sale = sales[i];
+    totalGasCost += parseFloat(sale.gasAmount) * 19.5;
+    totalSellingPrice += parseFloat(sale.totalAmount);
+  }
+
+  // Calculate profit
+  var profit = totalSellingPrice - totalGasCost;
+
+  // Display profit
+  alert("Your profit is: " + profit.toFixed(2));
 }
