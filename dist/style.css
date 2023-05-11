@@ -1,4 +1,5 @@
 /* Style for form and labels */
+
 form {
   display: flex;
   flex-direction: column;
